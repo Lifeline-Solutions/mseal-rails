@@ -10,10 +10,6 @@
       </h1>
       <p class="text-xl font-light mt-5">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat. Ut wisi Lorem ipsum dolor sit amet, consectetuer adipiscing
-        elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-        aliquam erat volutpat. Ut wisi
       </p>
       <div>
         <label htmlFor="header text">
@@ -23,11 +19,12 @@
       </div>
 
       <div class="flex  justify-between">
-1        <%= f.text_field :header_news, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Header of News"%>
+        <%= f.text_field :header_news, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Header of News" %>
+        <%= f.select :type_of_news,  %w[Injuries News Fans League], prompt: 'Type of News', class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Type of News" %>
 
       </div>
       <div class="flex justify-between">
-        <%= f.file_field :image, class: 'w-full',  required: true %>
+        <%= f.file_field :image, class: 'w-full' %>
 
       </div>
 

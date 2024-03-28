@@ -1,17 +1,19 @@
 <div class="shadow-md">
-<div class="p-6 bg-[#FAE115] font-bold uppercase lg:text-3xl md:text-3xl text-2xl flex justify-between truncate ...">
-  <p>NEWS | <%= @news.header_news %></p>
-</div>
-<div class="sm:w-[200px] md:w-[60%] lg:max-w-full xl:max-w-full mx-auto mt-[6px]">
-  <div>
-    <%= render "news/image_show" %>
+  <div class="p-6 bg-[#FAE115] font-bold uppercase lg:text-3xl md:text-3xl text-2xl flex justify-between ">
+    <p class="md:w-full w-[90%] truncate ...">NEWS | <%= @news.header_news %></p>
   </div>
-  <% if @news.type_of_news === "Match" %>
-    <h2 class="text-2xl font-bold mt-4 mr-3 m-4"><%= @news.type_of_news %></h2>
 
-  <h3 class="text-xl font-semibold m-4"><%= @news.header_news %></h3>
-  <p class="text-lg mt-2 p-4"><%= raw @news.body %></p>
-  <p class="text-semibold text-white mt-2 bg-[#D9D9D9]"><%= @news.created_at.strftime("%d.%m.%Y") %></p>
-  <% end %>
-</div>
+
+  <div class="sm:w-[200px] md:w-[60%] lg:max-w-full xl:max-w-full mx-auto mt-[6px]">
+    <div class="md:w-full w-[92%]">
+      <%= render "news/image_show" %>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-4 mr-3 m-4 flex justify-between uppercase"><%= @news.type_of_news %>  <p class="text-xs mt-2 "><%= @news.created_at.strftime("%d.%m.%Y") %></p>
+    </h2>
+
+    <h3 class="text-xl font-semibold m-4"><%= @news.header_news %></h3>
+    <h3 class="text-base font-light m-4"><%= raw @news.body %></h3>
+    <%= button_to 'Destroy', @news, method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-[#FAE115] p-3 rounded-lg mt-2" %>
+  </div>
 </div>

@@ -7,12 +7,12 @@
             </a>
           </li>
             <li>
-                <a target="_blank" rel="noreferrer" href="https://twitter.com/Mseal_FC">
+                <a target="_blank" rel="noreferrer" href="https://twitter.com/murangaseal">
                   <i class="fa-brands fa-twitter text-[#050505] hover:text-[#f4e721]"></i>
                 </a>
             </li>
             <li>
-                <a target="_blank" rel="noreferrer" href="https://www.facebook.com/msealfc/">
+                <a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100093441294551">
                   <i class="fa-brands fa-facebook-f fa-lg text-[#050505] hover:text-[#f4e721]"></i>
                 </a>
             </li>
@@ -54,7 +54,7 @@
                     </li>
 
                     <li class="hover:underline text-[#f4e721] underline-offset-8 hover:text-[#f4e721]">
-                        <%= link_to "FIXTURES" , fixture_index_path %>
+                        <%= link_to "FIXTURES" , opponent_index_path %>
                     </li>
                     <li class="hover:underline text-[#f4e721] underline-offset-8 hover:text-[#f4e721]">
                         <%= link_to "MEMBERSHIP", membership_index_path %>
@@ -65,6 +65,11 @@
                     <li class="hover:underline text-[#f4e721] underline-offset-8 hover:text-[#f4e721] ">
                       <%= link_to "SHOP", product_index_path %>
                     </li>
+                    <% if current_user %>
+                      <li class="hover:underline text-[#f4e721] underline-offset-8 hover:text-[#f4e721]">
+                        <%= button_to "LOGOUT",  destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+                      </li>
+                    <% end %>
                 </ul>
 
             </div>
@@ -95,7 +100,7 @@
       <%= link_to "TEAM", team_index_path %>
     </li>
     <li class="hover:underline text-[#f4e721] underline-offset-8 hover:text-[#f4e721]">
-      <%= link_to "FIXTURES", fixture_index_path %>
+      <%= link_to "FIXTURES", opponent_index_path %>
     </li>
     <li class="hover:underline text-[#f4e721] underline-offset-8 hover:text-[#f4e721]">
       <%= link_to "MEMBERSHIP", membership_index_path %>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :news
   resources :club
   resources :team
-  resources :fixture
+  resources :opponent
   resources :membership
   resources :product
   resources :advert

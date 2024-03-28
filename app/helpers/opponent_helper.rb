@@ -1,0 +1,2 @@
+module OpponentHelper
+end

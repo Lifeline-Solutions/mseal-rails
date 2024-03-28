@@ -1,9 +1,14 @@
-<div class="p-8 bg-[#FAE115] font-bold uppercase text-5xl">
-  CLUB & HISTORY | <span class="text-3xl"><%= @club.header %></span>
+
+<div class="shadow-md">
+  <div class="p-6 bg-[#FAE115] font-bold uppercase lg:text-3xl md:text-3xl text-2xl flex justify-between ">
+    <p class="md:w-full w-[90%] truncate ...">CLUB & HISTORY | <%= @club.header %></p>
+  </div>
+
+
+  <div class="sm:w-[200px] md:w-[60%] lg:max-w-full xl:max-w-full mx-auto mt-[6px]">
+    <div class="md:w-full min-w-[200px] min-h-[200px]">
+      <%= image_tag(@club.photo) %>
+    </div>
+    <h3 class="text-base font-light m-4"><%= raw @club.body %></h3>
+  </div>
 </div>
- <div>
-   <%= image_tag(@club.photo) %>
-   <%= @club.body %>
-
- </div>
-

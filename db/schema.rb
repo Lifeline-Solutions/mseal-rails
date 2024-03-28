@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_10_130431) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_28_104522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -284,6 +284,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_10_130431) do
     t.index ["user_id"], name: "index_news_on_user_id"
   end
 
+  create_table "opponents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.date "match_date"
+    t.time "match_time"
+    t.string "venue"
+    t.string "tournament"
+    t.string "opponent"
+    t.integer "score_one"
+    t.integer "score_two"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_opponents_on_user_id"
+  end
+
   create_table "orderables", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "product_id", null: false
     t.uuid "cart_id", null: false
@@ -363,6 +377,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_10_130431) do
   add_foreign_key "motor_note_tag_tags", "motor_notes", column: "note_id"
   add_foreign_key "motor_taggable_tags", "motor_tags", column: "tag_id"
   add_foreign_key "news", "users"
+  add_foreign_key "opponents", "users"
   add_foreign_key "orderables", "carts"
   add_foreign_key "orderables", "products"
   add_foreign_key "products", "users"

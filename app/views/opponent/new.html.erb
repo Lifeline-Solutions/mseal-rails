@@ -1,0 +1,38 @@
+<%= form_with  model: @opponent, url: opponent_index_path, method: :post, data: { turbo: false }, local: true do |f| %>
+
+  <div class="md:p-0">
+    <div class="p-6 bg-[#FAE115] font-bold uppercase lg:text-5xl md:text-4xl text-3xl flex justify-between">
+      ADD NEWS PAGE
+    </div>
+    <div class="md:w-[800px] lg:w-[1024px] flex flex-col gap-4 md:my-24 md:mx-auto bg-[#F7F3ED] md:p-8">
+      <h1 class="md:text-5xl text-2xl ">
+        ADD MATCHES TO THE WEBSITE
+      </h1>
+      <p class="text-xl font-light mt-5">
+        Adding a match to the website is very easy. Just fill in the form below and click submit.
+      </p>
+
+      <div class="flex  justify-between">
+        <%= f.date_field :match_date, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Match Date" %>
+        <%= f.time_field :match_time, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Match Time" %>
+      </div>
+      <div class="flex  justify-between">
+
+        <%= f.text_field :venue, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Venue" %>
+        <%= f.text_field :tournament, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Tournament" %>
+      </div>
+      <div class="flex  justify-between">
+        <%= f.text_field :opponent, class: "h-[50px] flex items-center p-2 w-[30%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Opponent" %>
+        <%= f.number_field :score_one, class: "h-[50px] flex items-center p-2 w-[30%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Home Team Score" %>
+        <%= f.number_field  :score_two, class: "h-[50px] flex items-center p-2 w-[30%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Away Team Score" %>
+
+      </div>
+
+
+
+      <%= f.submit "Submit", class: "w-[300px] mt-10 mb-10 md:mb-10 md:mt-16  mx-auto p-4 bg-[#F4E721] text-3xl text-black uppercase" %>
+    </div>
+
+  </div>
+<% end %>
+

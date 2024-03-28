@@ -4,7 +4,8 @@
   <%= form_with(model: @news, url: news_path(@news), method: :patch, class: "bg-white rounded shadow-md p-6") do |form| %>
     <div class="mb-4">
       <%= form.label :type_of_news, class: "block text-sm font-bold mb-2" %>
-      <%= form.text_field :type_of_news, class: "appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= form.select :type_of_news, %w[Injuries News Fans League], prompt: 'Type of News', class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Type of News", required: true%>
+
     </div>
 
     <div class="mb-4">

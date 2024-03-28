@@ -1,0 +1,38 @@
+<div>
+  <h1 class="p-6 bg-[#FAE115] font-bold uppercase lg:text-5xl md:text-4xl text-3xl flex justify-between">
+    FIXTURES
+  </h1>
+  <% @opponent.each do |opp| %>
+    <div class="flex flex-col justify-center md:flex-row pb-2 pt-2 gap-5 bg-[#e6e6e6]">
+    <div class="bg-[#FFF] border-[#FAE115] border-t-4 pb-2 justify-between">
+      <div class="flex justify-between border-[#FAE115] border-b-2 p-2">
+        <p class="p-2">
+          <%= opp.match_date %>
+
+          at
+          <%= opp.match_time %>
+
+          |
+         <%= opp.venue %>
+        </p>
+        <p class="p-2"><%= opp.tournament %></p>
+      </div>
+      <div class="flex gap-5 m-10">
+        <div class=" align-center hidden md:flex flex-col">
+          <%= image_tag "logo", class: " w-40"  %>
+          <p>
+
+            Murang'a Seals
+          </p>
+        </div>
+        <div class="flex flex-col justify-center mb-10 text-5xl ml-10">vs</div>
+        <div class="align-center hidden md:flex flex-col ml-10">
+          <%= image_tag "wazitologo", class: " w-40"  %>
+          <p class="ml-10">Wazito FC</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+

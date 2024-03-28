@@ -1,14 +1,30 @@
 <div class="shadow-md">
-  <div class="p-6 bg-[#FAE115] font-bold uppercase lg:text-3xl md:text-3xl text-2xl flex justify-between truncate ...">
-    <p>Muranga Seal | <%= @team.first_name %></p>
+  <div class="p-6 bg-[#FAE115] font-bold capitalize lg:text-3xl md:text-3xl text-2xl flex justify-between ">
+    <p class="md:w-full w-[90%] truncate ...">NEWS | <%= @team.first_name %> <%= @team.last_name %></p>
   </div>
 
-  <%= @team.first_name %>
-  <%= @team.second_name  %>
-  <%= @team.last_name %>
-  <%= @team.position %>
-  <%= @team.jersey_number%>
-  <%= @team.image %>
-  <%= image_tag(@team.image, class: "w-[50%]") %>
-  <%= raw @team.about%>
+
+  <div class="sm:w-[200px] md:w-[60%] lg:max-w-full xl:max-w-full mx-auto mt-[6px]">
+    <div class="md:w-full w-[92%]">
+      <%= image_tag(@team.image, class: "object-cover 2xl:w-[800px] xl:w-[600px] xl:h-[400px] lg:w-[400px] lg:h-[250px] md:h-[400px] md:w-[600px] sm:w-[200px]" ) %>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-4 mr-3 m-4 flex justify-between uppercase"> <p class="text-xs mt-2 "></p>
+    </h2>
+
+    <h3 class="text-xl font-semibold m-4"></h3>
+    <h3 class="text-base font-light m-4"> <%= @team.first_name %>
+      <%= @team.second_name  %>
+      <%= @team.last_name %>
+      <%= @team.position %>
+      <%= @team.jersey_number %>
+      <%= raw @team.about %>
+    </h3>
+
+    <% if current_user %>
+      <%= button_to 'Destroy', @team, method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-[#FAE115] p-3 rounded-lg mt-2" %>
+    <% end %>
+  </div>
+
 </div>
+

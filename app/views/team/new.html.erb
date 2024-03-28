@@ -19,15 +19,15 @@
       <div class="flex justify-between pr-10">
 
         <%= f.text_field :first_name, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "first name",  :required => :true %>
-        <%= f.text_field :second_name, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "second name"%>
-        <%= f.text_field :last_name, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "last name"%>
+        <%= f.text_field :second_name, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "second name", :required => :true%>
+        <%= f.text_field :last_name, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "last name", :required => :true%>
 
       </div>
       <div class="flex justify-between pr-10">
 
         <%= f.select :position, %w[Striker Midfielder Defender Goalkeeper Coach], prompt: 'Role/Position', required: true, class: 'h-[50px] w-[45%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none' %>
-        <%= f.number_field :jersey_number, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "Jersey Number"%>
-        <%= f.file_field :image, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "Passport Photo of Player"%>
+        <%= f.number_field :jersey_number, class: "h-[50px] w-[30%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "Jersey Number", :required => :true %>
+        <%= f.file_field :image, class: "h-[50px] w-[30%] p-2 focus:outline-none" ,placeholder: "Passport Photo of Player", :required => :true%>
 
       </div>
 

@@ -16,4 +16,5 @@ class User < ApplicationRecord
   has_many :news, foreign_key: :user_id, class_name: 'News', dependent: :destroy
   has_many :clubs, foreign_key: :user_id, class_name: 'Club', dependent: :destroy
   has_many :adverts, foreign_key: :user_id, class_name: 'Advert', dependent: :destroy
+  has_many :fixtures, foreign_key: :user_id, class_name: 'Fixture', dependent: :destroy
 end

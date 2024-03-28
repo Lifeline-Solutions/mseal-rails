@@ -10,15 +10,15 @@
       </h1>
 
       <div class="flex  justify-between">
-        <%= f.text_field :name, class: "h-[50px] w-[45%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "Name of the Product"%>
-        <%= f.number_field :price, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Price: "%>
+        <%= f.text_field :name, class: "h-[50px] w-[45%] p-2 border-b border-black bg-[#F7F3ED] focus:outline-none" ,placeholder: "Name of the Product", :required => :true%>
+        <%= f.number_field :price, class: "h-[50px] flex items-center p-2 w-[45%] border-b bg-[#F7F3ED] border-black focus:outline-none" ,placeholder: "Price: ", :required => :true%>
 
       </div>
       <div class="flex justify-between">
-        <%= f.file_field :photo_product, class: "h-[50px] w-[45%] bg-[#F7F3ED] p-2 border-black focus:outline-none" ,placeholder: "Upload Photo"%>
+        <%= f.file_field :photo_product, class: "h-[50px] w-[45%] bg-[#F7F3ED] p-2 border-black focus:outline-none" ,placeholder: "Upload Photo", :required => :true%>
       </div>
 
-      <%= f.text_area :description, class: "bg-[#F7F3ED] w-[100%] p-2 border-b border-black focus:outline-none", row: "12" ,placeholder: "Product Description  *"%>
+      <%= f.text_area :description, class: "bg-[#F7F3ED] w-[100%] p-2 border-b border-black focus:outline-none", row: "12" ,placeholder: "Product Description  *", :required => :true%>
 
       <%= f.submit "CREATE PRODUCT", class: "w-[300px] mt-10 mb-10 md:mb-10 md:mt-16  mx-auto p-4 bg-[#F4E721] text-3xl text-black font-semibold" %>
     </div>

@@ -20,9 +20,15 @@
         
           <% if current_user %>
             <div class="bg-[#FAE115] mt-2 p-2 md:mt-3 md:p-3 rounded-lg sm:mt-2 sm:p-2  mt-2 p-2">
-              <%= link_to "Edit News", edit_news_path(news.id), class: "text-[#000]  lg:text-base md:text-sm sm:text-xs md:font-bold sm:font-semibold  md:py-2 sm:py-1 md:px-4 sm:px-2 p-1 rounded mt-2" %>
+              <%= link_to "Edit", edit_news_path(news.id), class: "text-[#000]  lg:text-base md:text-sm sm:text-xs md:font-bold sm:font-semibold  md:py-2 sm:py-1 md:px-4 sm:px-2 p-1 rounded mt-2" %>
+
             </div>
-          <% end %>
+            <div class="bg-[#FAE115] mt-2 p-2 md:mt-3 md:p-3 rounded-lg sm:mt-2 sm:p-2  mt-2 p-2">
+              <%= button_to "Delete", news, method: :delete, data: { turbo_method: :delete  },class: "text-[#000] font-semibold " %>
+            </div>
+
+
+        <% end %>
         </div>
       </div>
     </div>
